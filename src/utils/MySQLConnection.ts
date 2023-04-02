@@ -6,10 +6,10 @@ class MySQLConnection {
 
   private constructor() {
     this.connectionPool = mysql.createPool({
-      host: 'mysqldb',
-      user: process.env.MYSQL_USER || 'root',
-      password: process.env.MYSQL_ROOT_PASSWORD || 'password',
-      database: 'shc',
+      host: process.env.DB_HOST,
+      user: process.env.MYSQL_USER,
+      password: process.env.MYSQL_ROOT_PASSWORD,
+      database: process.env.DB_NAME,
     });
   }
 
@@ -26,6 +26,7 @@ class MySQLConnection {
       const [rows] = await connection.query(sql, values);
       return rows;
     } catch (err) {
+      console.log('Connection Error --', err);
       throw err;
     } finally {
       connection.release();
