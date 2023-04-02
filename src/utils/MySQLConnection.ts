@@ -7,7 +7,7 @@ class MySQLConnection {
   private constructor() {
     this.connectionPool = mysql.createPool({
       host: process.env.DB_HOST,
-      user: process.env.MYSQL_USER,
+      user: 'root',
       password: process.env.MYSQL_ROOT_PASSWORD,
       database: process.env.DB_NAME,
     });
