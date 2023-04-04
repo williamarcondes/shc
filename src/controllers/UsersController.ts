@@ -10,7 +10,6 @@ export default class UsersController {
     res: Response,
     next: NextFunction,
   ): Promise<void> => {
-    console.log('ossk');
     try {
       const user = req.body as User;
       const result = await this.userService.create(user);
