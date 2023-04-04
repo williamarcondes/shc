@@ -1,15 +1,23 @@
+import { PrismaClient } from '@prisma/client';
 import app from './app';
-import MySQLConnection from './utils/MySQLConnection';
+
+const prisma = new PrismaClient();
 
 try {
-  MySQLConnection.getInstance();
-  const { PORT, MYSQL_PORT } = process.env;
+  const { PORT } = process.env;
 
-  app.listen(6060, () => {
+  (async () => {
+    console.log('Conexão estabelecida com sucesso!');
+  })();
+
+  app.listen(6060, async () => {
+    await prisma.$connect();
     console.log(`Ouvindo a porta ${PORT}`);
   });
-
-  console.log(`Database is ok ${MYSQL_PORT}`);
 } catch (error) {
   console.log(error);
+} finally {
+  (async () => {
+    await prisma.$disconnect();
+  })();
 }
