@@ -8,6 +8,14 @@ Repositório de Backend, do Sistema Online de Home Care, conectando familiares e
 
 ## Instalação e execução
 
+gerando node_modules primeira vez
+> docker run -it -u $(id -u) -v $(pwd):/app node:19.8.1-bullseye bash
+> cd app
+> npm install
+
+Popular o banco
+> dce -it back npx prisma db push
+
 Limpar containers
 
 > docker container stop $(docker container list -qa) && docker system prune -a

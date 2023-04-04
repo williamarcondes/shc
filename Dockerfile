@@ -1,6 +1,6 @@
-FROM node:14.17.6
+FROM node:19.8.1-bullseye
 
-WORKDIR /app-backend
+WORKDIR /app
 
 COPY package* ./ 
 

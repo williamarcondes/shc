@@ -1,17 +1,17 @@
 version: '3.1'
 
 services:
-  backend:
+  back:
     platform: linux/x86_64
     build: ./
-    container_name: backend
-    working_dir: /app-backend
+    container_name: back
+    working_dir: /app
     user: "${UID:-1000}:${GID:-1000}"
     ports:
       - 6060:6060
       - 5555:5555
     volumes:
-      - ./:/app-backend
+      - ./:/app
     env_file:
       - .env
     networks:
