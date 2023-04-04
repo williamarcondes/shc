@@ -8,10 +8,21 @@ Repositório de Backend, do Sistema Online de Home Care, conectando familiares e
 
 ## Instalação e execução
 
-Instale my-project com npm
+Limpar containers
 
-```bash
-  npm install
-  npm run dev
-```
-    
+> docker container stop $(docker container list -qa) && docker system prune -a
+
+Subir Container Backend
+> dcup backend
+
+
+## Prisma
+
+Gerar migrates
+> dce -it backend npx prisma migrate dev --name init
+
+Gerar dump da base
+> dce -it backend npx prisma db pull
+
+Rodar migrates criadas
+> dce -it backend npx prisma migrate dev
