@@ -7,6 +7,7 @@ services:
     container_name: node
     command: npm run dev
     working_dir: /home/app
+    user: "${UID:-1000}:${GID:-1000}"
     ports:
       - 6060:6060
     volumes:
@@ -21,7 +22,7 @@ services:
     platform: linux/x86_64
     image: mysql:8.0.26
     container_name: mysqldb
-    command: --default-authentication-plugin=mysql_native_password
+    command: --default-authentication-plugin=caching_sha2_password
     restart: always
     env_file:
       - .env

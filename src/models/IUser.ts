@@ -9,7 +9,7 @@ export interface IUserCredentials {
   password: string;
 }
 
-export default interface IUser extends IUserCredentials {
+export interface IUser extends IUserCredentials {
   username: string;
   role: string;
 }
