@@ -1,23 +1,22 @@
 version: '3.1'
 
 services:
-  node:
+  backend:
     platform: linux/x86_64
-    image: node:14.17.6
-    container_name: node
-    command: npm run dev
-    working_dir: /home/app
+    build: ./
+    container_name: backend
+    working_dir: /app-backend
     user: "${UID:-1000}:${GID:-1000}"
     ports:
       - 6060:6060
     volumes:
-      - ./:/home/app
-    networks:
-      - net1
-    depends_on:
-      - mysqldb
+      - ./:/app-backend
     env_file:
       - .env
+    networks:
+      - srcnet
+    depends_on:
+      - mysqldb
   mysqldb:
     platform: linux/x86_64
     image: mysql:8.0.26
@@ -29,7 +28,7 @@ services:
     ports:
       - 3306:3306
     networks:
-      - net1
+      - srcnet
 networks:
-  net1:
+  srcnet:
     driver: bridge
