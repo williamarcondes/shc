@@ -4,9 +4,7 @@ import UserRepository from '../repository/User.repository';
 import UserValidation from '../validations/User.validations';
 
 export default class UserService {
-  constructor(private userRepository = new UserRepository()) {
-
-  }
+  constructor(private userRepository = new UserRepository()) {}
 
   public async create(user: User): Promise<IUserBasicInformations> {
     if (!UserValidation.validateUser(user.email, user.password, user.role)) {
@@ -15,5 +13,11 @@ export default class UserService {
 
     const result = await this.userRepository.create(user);
     return result;
+  }
+
+  public async findById(userId: number): Promise<IUserBasicInformations | null> {
+    console.log('entrou');
+    const user = await this.userRepository.findById(userId);
+    return user ?? null;
   }
 }

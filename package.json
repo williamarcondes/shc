@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "install": "install"
+    "start": "ts-node-dev --respawn --transpile-only ./src/server.ts --clear"
   },
   "repository": {
     "type": "git",

@@ -14,3 +14,12 @@ model user {
   password String @db.VarChar(30)
   role     String @db.VarChar(30)
 }
+
+model clinic {
+  id        Int      @id @default(autoincrement())
+  name      String
+  city      String
+  street    String
+  number    Int
+  uf        String
+}

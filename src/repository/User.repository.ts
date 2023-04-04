@@ -9,4 +9,9 @@ export default class UserRepository {
 
     return newUser;
   };
+
+  public findById = async (userId: number): Promise<IUserBasicInformations | null> => {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    return user ?? null;
+  }
 }

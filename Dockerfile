@@ -9,6 +9,7 @@ RUN npm install
 COPY . . 
 
 EXPOSE 6060
+EXPOSE 5555
 
 ENTRYPOINT [ "npm", "run" ]
 
