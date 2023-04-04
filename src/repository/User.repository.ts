@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 export default class UserRepository {
   public create = async (user: IUser): Promise<IUserBasicInformations> => {
-    const newUser = await prisma.users.create({ data: user });
+    const newUser = await prisma.user.create({ data: user });
 
     return newUser;
   };
