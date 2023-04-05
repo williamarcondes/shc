@@ -16,8 +16,7 @@ export default class UserService {
   }
 
   public async findById(userId: number): Promise<IUserBasicInformations | null> {
-    console.log('entrou');
-    const user = await this.userRepository.findById(userId);
-    return user ?? null;
+    const result = await this.userRepository.findById(userId);
+    return result ?? null;
   }
 }

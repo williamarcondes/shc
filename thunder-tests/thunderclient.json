@@ -2,13 +2,13 @@
   {
     "_id": "437a3f2a-45c2-43e0-a2fe-169176ea6675",
     "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
-    "containerId": "",
-    "name": "Post User",
+    "containerId": "01368f59-0b72-47bd-91e5-db2474eed30a",
+    "name": "User",
     "url": "localhost:6060/users",
     "method": "POST",
     "sortNum": 10000,
     "created": "2023-04-02T22:43:19.506Z",
-    "modified": "2023-04-04T06:36:45.799Z",
+    "modified": "2023-04-05T02:02:04.192Z",
     "headers": [],
     "params": [],
     "body": {
@@ -21,15 +21,48 @@
   {
     "_id": "6d865655-c648-4b5a-abf4-e08ed28004ad",
     "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
-    "containerId": "",
-    "name": "Get user",
+    "containerId": "01368f59-0b72-47bd-91e5-db2474eed30a",
+    "name": "User",
     "url": "localhost:6060/users/1",
     "method": "GET",
-    "sortNum": 30000,
+    "sortNum": 20000,
     "created": "2023-04-04T06:25:58.589Z",
-    "modified": "2023-04-04T06:26:26.263Z",
+    "modified": "2023-04-05T02:02:05.093Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "cdcc8d03-b421-495f-9978-acac4dad807a",
+    "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
+    "containerId": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+    "name": "Clinic",
+    "url": "localhost:6060/clinics/1",
+    "method": "GET",
+    "sortNum": 10000,
+    "created": "2023-04-05T02:02:23.533Z",
+    "modified": "2023-04-05T02:03:11.911Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "310e29e3-2238-4e2e-b31b-0f0ab203b255",
+    "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
+    "containerId": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+    "name": "Clinic",
+    "url": "localhost:6060/clinics",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-04-05T02:02:27.402Z",
+    "modified": "2023-04-05T02:17:12.644Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Moebao\",\n  \"city\": \"Poços de Caldas\",\n  \"street\": \"Rua Assis\",\n  \"number\": 50,\n  \"uf\": \"MG\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

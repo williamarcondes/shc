@@ -4,6 +4,21 @@
     "colName": "shc",
     "created": "2023-04-02T22:43:05.610Z",
     "sortNum": 10000,
-    "folders": []
+    "folders": [
+      {
+        "_id": "01368f59-0b72-47bd-91e5-db2474eed30a",
+        "name": "User",
+        "containerId": "",
+        "created": "2023-04-05T02:02:02.749Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+        "name": "Clinic",
+        "containerId": "",
+        "created": "2023-04-05T02:02:09.996Z",
+        "sortNum": 20000
+      }
+    ]
   }
 ]
