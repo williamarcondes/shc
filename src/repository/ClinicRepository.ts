@@ -14,6 +14,4 @@ export default class ClinicRepository {
     const clinic = await prisma.clinic.findUnique({ where: { id: clinicId } });
     return clinic ?? null;
   };
-
-  // Outros métodos do repositório para operações CRUD com a entidade Clinic
 }

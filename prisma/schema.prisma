@@ -22,4 +22,12 @@ model clinic {
   street    String
   number    Int
   uf        String
+  employee  employee[]
+}
+
+model employee {
+  id        Int      @id @default(autoincrement())
+  name      String
+  clinicId  Int
+  clinic    clinic   @relation(fields: [clinicId], references: [id])
 }
