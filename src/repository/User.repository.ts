@@ -13,5 +13,5 @@ export default class UserRepository {
   public findById = async (userId: number): Promise<IUserBasicInformations | null> => {
     const user = await prisma.user.findUnique({ where: { id: userId } });
     return user ?? null;
-  }
+  };
 }

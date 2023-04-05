@@ -7,7 +7,6 @@ export default class UsersController {
   private userService: UserService;
 
   constructor(userService: UserService) {
-    console.log('declarous');
     this.userService = userService;
   }
 
