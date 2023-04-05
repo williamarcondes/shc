@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --respawn --transpile-only ./src/server.ts --clear"
+    "start": "node src/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child ./src/server.ts --clear"
   },
   "repository": {
     "type": "git",

@@ -18,7 +18,7 @@ export default class UsersController {
     } catch (error) {
       next(error);
     }
-  }
+  };
 
   public showUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
@@ -33,5 +33,5 @@ export default class UsersController {
     } catch (error) {
       next(error);
     }
-  }
+  };
 }

@@ -5,6 +5,7 @@ services:
     platform: linux/x86_64
     build: ./
     container_name: back
+    command: dev
     working_dir: /app
     user: "${UID:-1000}:${GID:-1000}"
     ports:

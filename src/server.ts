@@ -3,7 +3,6 @@ import app from './app';
 
 const prisma = new PrismaClient();
 
-
 const connectWithRetry = async () => {
   try {
     await prisma.$connect();
@@ -14,7 +13,6 @@ const connectWithRetry = async () => {
     setTimeout(connectWithRetry, 5000);
   }
 };
-
 
 try {
   const { PORT } = process.env;
