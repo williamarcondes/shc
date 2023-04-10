@@ -9,8 +9,7 @@ Repositório de Back, do Sistema Online de Home Care, conectando familiares e cu
 ## Instalação e execução
 
 gerando node_modules primeira vez
-> docker run -it -u $(id -u) -v $(pwd):/app node:19.8.1-bullseye bash
-> cd app
+> docker run -it -u $(id -u) -v $(pwd):/app -w /app node:19.8.1-bullseye bash
 > npm install
 
 Popular o banco

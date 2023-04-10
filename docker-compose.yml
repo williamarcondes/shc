@@ -10,13 +10,12 @@ services:
     user: "${UID:-1000}:${GID:-1000}"
     ports:
       - 6060:6060
-      - 5555:5555
     volumes:
       - ./:/app
     env_file:
       - .env
     networks:
-      - srcnet
+      - shc_net
     depends_on:
       - mysqldb
   mysqldb:
@@ -30,7 +29,7 @@ services:
     ports:
       - 3306:3306
     networks:
-      - srcnet
+      - shc_net
 networks:
-  srcnet:
-    driver: bridge
+  shc_net:
+    external: true
