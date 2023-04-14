@@ -27,5 +27,34 @@
         "sortNum": 30000
       }
     ]
+  },
+  {
+    "_id": "3036e252-2519-4f30-b7fb-e45ff130b70c",
+    "colName": "shc Copy",
+    "created": "2023-04-14T11:48:11.341Z",
+    "sortNum": 20000,
+    "folders": [
+      {
+        "_id": "75101344-e640-4b01-8120-a4add4a5702e",
+        "name": "User",
+        "containerId": "",
+        "created": "2023-04-14T11:48:11.345Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "908002fa-ea97-4906-b8e4-2a49f297d815",
+        "name": "Clinic",
+        "containerId": "",
+        "created": "2023-04-14T11:48:11.346Z",
+        "sortNum": 20000
+      },
+      {
+        "_id": "ad9c7d47-8310-4397-8ef8-7c45a7a59f59",
+        "name": "Employee",
+        "containerId": "",
+        "created": "2023-04-14T11:48:11.347Z",
+        "sortNum": 30000
+      }
+    ]
   }
 ]

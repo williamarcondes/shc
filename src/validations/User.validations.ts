@@ -15,7 +15,7 @@ export default class UserValidation {
   }
 
   public static validateRole(role: string): boolean {
-    return role === 'admin' || role === 'user';
+    return role === 'admin' || role === 'employer';
   }
 
   public static validateUser(

@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . . 
 
+EXPOSE 5555
+
 EXPOSE 6060
 
 ENTRYPOINT [ "npm", "run" ]
