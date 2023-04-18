@@ -41,7 +41,7 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-04-05T02:02:23.533Z",
-    "modified": "2023-04-10T04:34:02.452Z",
+    "modified": "2023-04-17T21:39:12.429Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -195,6 +195,53 @@
     "modified": "2023-04-14T11:48:11.350Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "6d62035f-9d30-42a5-a643-6abdc9cfc7a5",
+    "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
+    "containerId": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+    "name": "Clinics",
+    "url": "localhost:6060/clinics",
+    "method": "GET",
+    "sortNum": 15000,
+    "created": "2023-04-18T03:34:06.025Z",
+    "modified": "2023-04-18T03:34:20.879Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "b2bb7831-3752-4354-bb9e-2ceb8d8a4b39",
+    "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
+    "containerId": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+    "name": "Clinic",
+    "url": "localhost:6060/clinics/4",
+    "method": "DELETE",
+    "sortNum": 12500,
+    "created": "2023-04-18T03:35:35.588Z",
+    "modified": "2023-04-18T03:41:56.705Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c56f3c76-007a-4cb1-8462-96e392af808f",
+    "colId": "9a33643a-87dd-4b5c-a32b-342cec4ceadd",
+    "containerId": "da114adf-ee1a-4b8f-a6df-7e485415d899",
+    "name": "Clinic Copy",
+    "url": "localhost:6060/clinics/7",
+    "method": "PUT",
+    "sortNum": 30000,
+    "created": "2023-04-18T03:42:58.350Z",
+    "modified": "2023-04-18T03:43:56.844Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Wellington\",\n  \"city\": \"Poços de Caldas\",\n  \"street\": \"Rua Assis\",\n  \"number\": 50,\n  \"uf\": \"MG\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

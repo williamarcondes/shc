@@ -7,23 +7,23 @@ export default class ClinicService {
     this.repository = repository;
   }
 
+  public async all(): Promise<IClinicDTO[] | null> {
+    return await this.repository.findAll() ?? [];
+  }
+
   public async create(clinic: Clinic): Promise<IClinicDTO> {
-    const result = await this.repository.create(clinic);
-    return result;
+    return await this.repository.create(clinic) ?? null;
   }
 
-  public async findById(clinicId: number): Promise<IClinicDTO | null> {
-    const clinic = await this.repository.findById(clinicId);
-    return clinic ?? null;
+  public async findById(id: number): Promise<IClinicDTO | null> {
+    return await this.repository.findById(id) ?? null;
+  }
+  
+  public async update(id: number, clinic: Clinic): Promise<IClinicDTO | null> {
+    return await this.repository.update(id, clinic) ?? null;
   }
 
-  // public async update(clinicId: number, clinic: Clinic): Promise<Clinic | null> {
-  //   const result = await this.repository.update(clinicId, clinic);
-  //   return result;
-  // }
-
-  // public async delete(clinicId: number): Promise<boolean> {
-  //   const result = await this.repository.delete(clinicId);
-  //   return result;
-  // }
+  public async delete(id: number): Promise<IClinicDTO | null> {
+    return await this.repository.delete(id) ?? null;
+  }
 }

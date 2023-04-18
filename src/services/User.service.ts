@@ -19,4 +19,14 @@ export default class UserService {
     const result = await this.userRepository.findById(userId);
     return result ?? null;
   }
+
+  // public async update(employeeId: number, employee: Employee): Promise<Employee | null> {
+  //   const result = await this.repository.update(employeeId, employee);
+  //   return result;
+  // }
+
+  // public async delete(employeeId: number): Promise<boolean> {
+  //   const result = await this.repository.delete(employeeId);
+  //   return result;
+  // }
 }

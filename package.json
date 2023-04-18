@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
+    "docker-build": "npm run docker-create-network && npm run docker-npm-install",
+    "docker-npm-install": "docker run -it -u $(id -u) -v $(pwd):/app -w /app node:16.14.2-bullseye npm install",
+    "docker-create-network": "docker network create shc_net",
     "start": "node src/server.ts",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child ./src/server.ts --clear"
   },

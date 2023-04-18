@@ -10,6 +10,20 @@ export default class ClinicsController {
     this.clinicService = clinicService;
   }
 
+  public indexClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const clinics: IClinic[] | null = await this.clinicService.all();
+
+      if (!clinics) {
+        res.status(404).json({ message: 'Não possui clínicas cadastradas.' });
+      } else {
+        res.status(200).json({ clinics });
+      }
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public createClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const clinic = req.body as Clinic;
@@ -35,24 +49,24 @@ export default class ClinicsController {
     }
   };
 
-  // public updateClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  //   try {
-  //     const clinicId: number = parseInt(req.params.id, 10);
-  //     const clinic = req.body as Clinic;
-  //     const result = await this.clinicService.update(clinicId, clinic);
-  //     res.status(200).json({ clinic: result });
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // };
+  public updateClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const clinicId: number = parseInt(req.params.id, 10);
+      const clinic = req.body as Clinic;
+      const result = await this.clinicService.update(clinicId, clinic);
+      res.status(200).json({ clinic: result });
+    } catch (error) {
+      next(error);
+    }
+  };
 
-  // public deleteClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-  //   try {
-  //     const clinicId: number = parseInt(req.params.id, 10);
-  //     await this.clinicService.delete(clinicId);
-  //     res.status(204).send();
-  //   } catch (error) {
-  //     next(error);
-  //   }
-  // };
+  public deleteClinic = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const clinicId: number = parseInt(req.params.id, 10);
+      await this.clinicService.delete(clinicId);
+      res.status(204).send();
+    } catch (error) {
+      next(error);
+    }
+  };
 }
