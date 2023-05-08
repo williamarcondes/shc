@@ -14,4 +14,4 @@ EXPOSE 6060
 
 ENTRYPOINT [ "npm", "run" ]
 
-CMD ["start"]
+CMD ["dev"]
