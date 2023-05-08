@@ -7,6 +7,10 @@ export default class EmployeeService {
     this.repository = repository;
   }
 
+  public async all(clinicId: number): Promise<IEmployeeDTO[] | null> {
+    return await this.repository.findAll(clinicId) ?? [];
+  }
+
   public async create(employee: Employee): Promise<IEmployeeDTO> {
     const result = await this.repository.create(employee);
     return result;

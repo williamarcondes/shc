@@ -14,4 +14,8 @@ export default class EmployeeRepository {
     const employee = await prisma.employee.findUnique({ where: { id: employeeId } });
     return employee ?? null;
   };
+  
+  async findAll(clinicId: number): Promise<IEmployeeDTO[]> {
+    return await prisma.employee.findMany({ where: { clinicId } }) ?? [];
+  }
 }

@@ -9,6 +9,7 @@ const repository = new EmployeeRepository();
 const service = new EmployeeService(repository);
 const controller = new EmployeeController(service);
 
+employeeRouter.get('/', controller.indexEmployee);
 employeeRouter.post('/', controller.createEmployee);
 employeeRouter.get('/:id', controller.showEmployee);
 // employeeRouter.put('/:id', controller.updateEmployee);

@@ -4,11 +4,27 @@ import { IEmployee } from '../models/IEmployee';
 import EmployeeService from '../services/Employee.service';
 
 export default class EmployeesController {
-  private clinicService: EmployeeService;
+  private employeService: EmployeeService;
 
-  constructor(clinicService: EmployeeService) {
-    this.clinicService = clinicService;
+  constructor(employeService: EmployeeService) {
+    this.employeService = employeService;
   }
+
+  public indexEmployee = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const clinicId: number = req.query.clinicId ? parseInt(req.query.clinicId as string, 10) : 0;
+
+      const employees: IEmployee[] | null = await this.employeService.all(clinicId);
+
+      if (!employees) {
+        res.status(404).json({ message: 'Não possui clínicas cadastradas.' });
+      } else {
+        res.status(200).json({ employees });
+      }
+    } catch (error) {
+      next(error);
+    }
+  };
 
   public createEmployee = async (
     req: Request,
@@ -16,9 +32,9 @@ export default class EmployeesController {
     next: NextFunction,
   ): Promise<void> => {
     try {
-      const clinic = req.body as Employee;
-      const result = await this.clinicService.create(clinic);
-      res.status(201).json({ clinic: result });
+      const employe = req.body as Employee;
+      const result = await this.employeService.create(employe);
+      res.status(201).json({ employe: result });
     } catch (error) {
       next(error);
     }
@@ -26,13 +42,13 @@ export default class EmployeesController {
 
   public showEmployee = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const clinicId: number = parseInt(req.params.id, 10);
-      const clinic: IEmployee | null = await this.clinicService.findById(clinicId);
+      const employeId: number = parseInt(req.params.id, 10);
+      const employe: IEmployee | null = await this.employeService.findById(employeId);
 
-      if (!clinic) {
+      if (!employe) {
         res.status(404).json({ message: 'Employee not found' });
       } else {
-        res.status(200).json({ clinic });
+        res.status(200).json({ employe });
       }
     } catch (error) {
       next(error);
@@ -41,10 +57,10 @@ export default class EmployeesController {
 
   // public updateEmployee = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   //   try {
-  //     const clinicId: number = parseInt(req.params.id, 10);
-  //     const clinic = req.body as Employee;
-  //     const result = await this.clinicService.update(clinicId, clinic);
-  //     res.status(200).json({ clinic: result });
+  //     const employeId: number = parseInt(req.params.id, 10);
+  //     const employe = req.body as Employee;
+  //     const result = await this.employeService.update(employeId, employe);
+  //     res.status(200).json({ employe: result });
   //   } catch (error) {
   //     next(error);
   //   }
@@ -52,8 +68,8 @@ export default class EmployeesController {
 
   // public deleteEmployee = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   //   try {
-  //     const clinicId: number = parseInt(req.params.id, 10);
-  //     await this.clinicService.delete(clinicId);
+  //     const employeId: number = parseInt(req.params.id, 10);
+  //     await this.employeService.delete(employeId);
   //     res.status(204).send();
   //   } catch (error) {
   //     next(error);
